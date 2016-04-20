@@ -1,0 +1,6 @@
+name: Science
+main: dk.benjaminbreuner.science.Science
+version: 0.0.1
+commands:
+  book:
+    description: Plugin by benjamin1313 that add some science to the game
