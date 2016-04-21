@@ -14,8 +14,9 @@ public class Science extends JavaPlugin{
 		getLogger().info("Science enabled");
 		getServer().getPluginManager().registerEvents(new Notes(), this);
 		//loading recipes
-		new ItemRecipes().boostsole();
-		new ItemRecipes().powerBootsV1();
+		new ItemRecipes().boostSole();
+		//new ItemRecipes().chemicalWorkbench();
+		//new ItemRecipes().powerBootsV1();
 	}
 	
 	public void onDisable(){
