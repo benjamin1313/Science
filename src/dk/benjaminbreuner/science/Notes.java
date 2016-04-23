@@ -41,7 +41,7 @@ public class Notes implements Listener{
         		"sadly this will be my last notes for this project. "
         		+ "the project have been shut down because of Bobs accident and i won't be able to continue on my own. "
         		+ "I have left some instructions on how the boots are made on the next page",
-        		"by combining magma_cream and a iron_igot you create a sole that can be placed under a pair of shoes using the chemical workbench");
+        		"by combining magma_cream and a iron_igot you create a sole that can be placed under a pair of shoes using the Research Table");
         note.setItemMeta(meta);
         PlayerInventory inventory = p.getInventory(); 
         inventory.addItem(note);

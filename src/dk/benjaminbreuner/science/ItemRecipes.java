@@ -3,25 +3,10 @@ package dk.benjaminbreuner.science;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class ItemRecipes{
-	
-	// TODO tag stilling til om powerBoots skal lavet på chemicalWorkbench eller creafting table
-	//public void chemicalWorkbench(){
-	//	ItemStack Iblock = new ItemStack(Material.IRON_BLOCK);
-	//	ItemMeta IblockMeta = Iblock.getItemMeta();
-	//	IblockMeta.setDisplayName("Chemical Workbench");
-	//	Iblock.setItemMeta(IblockMeta);
-	//	
-	//	ShapedRecipe CWrecipe = new ShapedRecipe(Iblock);
-	//	CWrecipe.shape("###","! !");
-	//	CWrecipe.setIngredient('#', Material.WOOD);
-	//	CWrecipe.setIngredient('!', Material.STICK);
-	//	Bukkit.getServer().addRecipe(CWrecipe);
-	//}
 	
 	public void boostSole(){
 		ItemStack ingot = new ItemStack(Material.IRON_INGOT);
