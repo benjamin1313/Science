@@ -18,7 +18,7 @@ public class ItemRecipes{
 		soleRecipe.addIngredient(Material.IRON_INGOT);
 		Bukkit.getServer().addRecipe(soleRecipe);
 	}
-	// TODO skal havde gjort sådan at denne recipe kun virker med Boost sole 
+    //crafting table recipe for PowerBoots
 	//public void powerBootsV1(){
 	//	ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
 	//	ItemMeta bootsMeta = boots.getItemMeta();
