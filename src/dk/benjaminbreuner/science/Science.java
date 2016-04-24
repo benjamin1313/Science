@@ -14,6 +14,7 @@ public class Science extends JavaPlugin{
 		getLogger().info("Science enabled");
 		getServer().getPluginManager().registerEvents(new Notes(), this);
 		getServer().getPluginManager().registerEvents(new ResearchTable(), this);
+		getServer().getPluginManager().registerEvents(new PowerBootsManager(), this);
 		//loading recipes
 		new ItemRecipes().boostSole();
 		//new ItemRecipes().powerBootsV1();
