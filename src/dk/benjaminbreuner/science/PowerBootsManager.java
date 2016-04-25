@@ -21,7 +21,7 @@ public class PowerBootsManager implements Listener{
 	public void onPlayerMove(PlayerMoveEvent event){
 		Player player = event.getPlayer();
 		if (player.getInventory().getBoots().getItemMeta().getDisplayName().equals("Power Boots v1")){
-			player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP,500,16));
+			player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP,200,16));
 	        if(event.getTo().getBlockY()>event.getFrom().getBlockY()){
 	        	if( !inJump.containsKey(player.getName()) || inJump.get(player.getName()).equals("not jumping")){
 	        		inJump.put(player.getName(), "jumping");
@@ -38,31 +38,29 @@ public class PowerBootsManager implements Listener{
 		return;
 	}
 	public void updateLore(Player player, ItemStack item){
-		player.sendMessage("lore");
-		
 		ItemMeta im = item.getItemMeta();
 		List<String> lore = im.getLore();
 		if(lore.contains(ChatColor.DARK_AQUA + "uses 6")){
 			lore.remove(ChatColor.DARK_AQUA + "uses 6");
 			lore.add(ChatColor.DARK_AQUA + "uses 5");
 		}
-		if(lore.contains(ChatColor.DARK_AQUA + "uses 5")){
+		else if(lore.contains(ChatColor.DARK_AQUA + "uses 5")){
 			lore.remove(ChatColor.DARK_AQUA + "uses 5");
 			lore.add(ChatColor.DARK_AQUA + "uses 4");
 		}
-		if(lore.contains(ChatColor.DARK_AQUA + "uses 4")){
+		else if(lore.contains(ChatColor.DARK_AQUA + "uses 4")){
 			lore.remove(ChatColor.DARK_AQUA + "uses 4");
 			lore.add(ChatColor.DARK_AQUA + "uses 3");
 		}
-		if(lore.contains(ChatColor.DARK_AQUA + "uses 3")){
+		else if(lore.contains(ChatColor.DARK_AQUA + "uses 3")){
 			lore.remove(ChatColor.DARK_AQUA + "uses 3");
 			lore.add(ChatColor.DARK_AQUA + "uses 2");
 		}
-		if(lore.contains(ChatColor.DARK_AQUA + "uses 2")){
+		else if(lore.contains(ChatColor.DARK_AQUA + "uses 2")){
 			lore.remove(ChatColor.DARK_AQUA + "uses 2");
 			lore.add(ChatColor.DARK_AQUA + "uses 1");
 		}
-		if(lore.contains(ChatColor.DARK_AQUA + "uses 1")){
+		else if(lore.contains(ChatColor.DARK_AQUA + "uses 1")){
 			player.getInventory().setBoots(new ItemStack(Material.AIR));
 			return;
 		}
