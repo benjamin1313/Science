@@ -1,7 +1,10 @@
 package dk.benjaminbreuner.science;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -46,6 +49,9 @@ public class ResearchTable implements Listener{
 						ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
 						ItemMeta bootsMeta = boots.getItemMeta();
 						bootsMeta.setDisplayName("Power Boots v1");
+						List<String> lore = new ArrayList<String>();
+					    lore.add(ChatColor.DARK_AQUA + "uses 6");
+					    bootsMeta.setLore(lore); 
 						boots.setItemMeta(bootsMeta);
 						player.setItemInHand(boots);
 						player.sendMessage("You just created a pair of Power Boots v1");
