@@ -11,7 +11,8 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.BookMeta;
 
 public class Notes implements Listener{
-    @EventHandler
+    @EventHandler //if the player Right click on a villager they have a chance to receive
+    //a  random book with Research notes
     public void PlayerRightClick(PlayerInteractEntityEvent event) {
     	 if(event.getRightClicked() instanceof Villager){
     		 int lower = 0;
@@ -27,16 +28,17 @@ public class Notes implements Listener{
     		 }
     	 }
 	}
+    //Research  notes
     public void GiveNote1(Player p){
     	ItemStack note = new ItemStack(Material.WRITTEN_BOOK);
 	 	BookMeta meta = (BookMeta)note.getItemMeta();
-	 	meta.setTitle("Research  notes");
+	 	meta.setTitle("Research notes");
         meta.setAuthor("Scientist");
         meta.setPages("My studies show that there are a lot of potential energi in magma_cream. "
         		+ "that might could be used in some items",
         		"further research have show that it is possible to realease the potential energi in magma_cream in a small burst "
         		+ "i can't wait to get started playing aroud with it",
-        		"This is a great day my team and i just createt a pair of boots that ueses magma_cream and in theory they should be able to launch a parson a few feet in the air",
+        		"This is a great day my team and i just createt a pair of boots that ueses magma_cream and in theory they should be able to launch a person a few feet in the air",
         		"success! The boots works. kinda. Bob did take some dammage and they are only good for a few jumps.",
         		"sadly this will be my last notes for this project. "
         		+ "the project have been shut down because of Bobs accident and i won't be able to continue on my own. "

@@ -14,14 +14,15 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+
 //TODO fix error  Could not pass event PlayerMoveEvent to Science when player does not wear powerBoots
 public class PowerBootsManager implements Listener{
 	HashMap<String, String> inJump = new HashMap<String, String>();
-	@EventHandler
+	@EventHandler // if the player have Power Boots equipped then moving give them jump boost
 	public void onPlayerMove(PlayerMoveEvent event){
 		Player player = event.getPlayer();
 		if (player.getInventory().getBoots().getItemMeta().getDisplayName().equals("Power Boots v1")){
-			player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP,200,16));
+			player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP,50,16));
 	        if(event.getTo().getBlockY()>event.getFrom().getBlockY()){
 	        	if( !inJump.containsKey(player.getName()) || inJump.get(player.getName()).equals("not jumping")){
 	        		inJump.put(player.getName(), "jumping");
@@ -29,6 +30,7 @@ public class PowerBootsManager implements Listener{
 	        		updateLore(player, boots);
 	        	}
 	        }
+	        //if the player is in a jump and is falling down this set them as not jumping
 	        if(event.getTo().getBlockY()<event.getFrom().getBlockY()){
 	        	if(inJump.get(player.getName())=="jumping"){
 	        		inJump.put(player.getName(), "not jumping");
@@ -37,6 +39,7 @@ public class PowerBootsManager implements Listener{
 		}
 		return;
 	}
+	//will reduce the uses of Power boots
 	public void updateLore(Player player, ItemStack item){
 		ItemMeta im = item.getItemMeta();
 		List<String> lore = im.getLore();

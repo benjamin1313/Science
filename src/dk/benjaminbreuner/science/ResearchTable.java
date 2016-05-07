@@ -28,6 +28,8 @@ public class ResearchTable implements Listener{
 			if(event.getClickedBlock().getType().equals(Material.CARPET)){
 				Location loc = event.getClickedBlock().getLocation();
 				if(isTable(loc)){
+					//all of the above is true this is a crafting table and the player can now
+					//try to match the recipes
 					ItemStack itemInHand = player.getItemInHand();
 					event.setCancelled(true);
 					if(!RecipeStage.containsKey(player.getName()) || RecipeStage.get(player.getName()).equals("none")){
@@ -61,6 +63,7 @@ public class ResearchTable implements Listener{
 			}
 		}
 	}
+	//if it is a research table
 	public boolean isTable(Location loc){
 		loc.setY(loc.getY()-1);
 		Block b1 = loc.getBlock();

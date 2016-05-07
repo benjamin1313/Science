@@ -17,7 +17,6 @@ public class Science extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new PowerBootsManager(), this);
 		//loading recipes
 		new ItemRecipes().boostSole();
-		//new ItemRecipes().powerBootsV1();
 	}
 	
 	public void onDisable(){
