@@ -27,7 +27,8 @@ public class Science extends JavaPlugin{
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("science")) {
-		    sender.sendMessage("");
+		    sender.sendMessage(ChatColor.BLUE + "---------------Science dev---------------");
+		    sender.sendMessage(ChatColor.AQUA + "Made by benjamin1313");
 		    sender.sendMessage(ChatColor.AQUA + "this plugin adds science to the game.");
 			return true;
 		}

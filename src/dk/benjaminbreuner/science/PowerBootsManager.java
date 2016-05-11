@@ -30,7 +30,7 @@ public class PowerBootsManager implements Listener{
 	        		updateLore(player, boots);
 	        	}
 	        }
-	        //if the player is in a jump and is falling down this sets them as not jumping
+	        //if the player is in a jump and is falling down this set them as not jumping
 	        if(event.getTo().getBlockY()<event.getFrom().getBlockY()){
 	        	if(inJump.get(player.getName())=="jumping"){
 	        		inJump.put(player.getName(), "not jumping");
