@@ -19,6 +19,7 @@ public class Science extends JavaPlugin{
 		new ItemRecipes().boostSole();
 	}
 	
+
 	public void onDisable(){
 		getLogger().info("Science disabled");
 		Bukkit.getServer().clearRecipes();
@@ -30,7 +31,7 @@ public class Science extends JavaPlugin{
 		    sender.sendMessage(ChatColor.YELLOW + "------------------Science V0.0.1------------------");
 		    sender.sendMessage(ChatColor.AQUA + "By benjamin1313 and Draco");
 		    sender.sendMessage("");
-		    sender.sendMessage(ChatColor.AQUA + "this plugin adds science to the game.");
+		    sender.sendMessage(ChatColor.AQUA + "This plugin adds science to the game.");
 			return true;
 		}
 		return false; 
