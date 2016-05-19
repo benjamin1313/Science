@@ -17,6 +17,7 @@ public class ItemRecipes{
 		soleRecipe.addIngredient(Material.MAGMA_CREAM);
 		soleRecipe.addIngredient(Material.IRON_INGOT);
 		Bukkit.getServer().addRecipe(soleRecipe);
+		
 	}
     //crafting table recipe for PowerBoots
 	//public void powerBootsV1(){

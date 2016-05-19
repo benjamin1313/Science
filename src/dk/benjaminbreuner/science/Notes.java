@@ -1,10 +1,16 @@
 package dk.benjaminbreuner.science;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import net.md_5.bungee.api.ChatColor;
+
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
@@ -15,13 +21,21 @@ public class Notes implements Listener{
     //a  random book with Research notes
     public void PlayerRightClick(PlayerInteractEntityEvent event) {
     	 if(event.getRightClicked() instanceof Villager){
-    		 int lower = 0;
-    		 int upper = 10;
-    		 int number1 = (int) (Math.random() * upper) + lower;
+    //TODO Remove breakpoints when finished with testing
+    //		 int lower = 0;
+    //		 int upper = 10;
+   // 		 int number1 = (int) (Math.random() * upper) + lower;
+    		 int number1 = 1; 
     		 if (number1 == 1) {
     			event.getPlayer().sendMessage("I found this old thing");
     		 	event.getPlayer().sendMessage("It's yours if you want it");
     		 	event.setCancelled(true);
+    		 	
+    			int i = 1;
+    			if ( i == i) {
+    				int e = i; }
+    			
+    		 	
     		 	Player player = (Player) event.getPlayer(); 
     		 	GiveNote1(player);
     		 	
@@ -33,19 +47,27 @@ public class Notes implements Listener{
     	ItemStack note = new ItemStack(Material.WRITTEN_BOOK);
 	 	BookMeta meta = (BookMeta)note.getItemMeta();
 	 	meta.setTitle("Research notes");
-        meta.setAuthor("Scientist");
-        meta.setPages("My studies show that there are a lot of potential energi in magma_cream. "
-        		+ "that might could be used in some items",
-        		"further research have show that it is possible to realease the potential energi in magma_cream in a small burst "
-        		+ "i can't wait to get started playing aroud with it",
-        		"This is a great day my team and i just createt a pair of boots that ueses magma_cream and in theory they should be able to launch a person a few feet in the air",
-        		"success! The boots works. kinda. Bob did take some dammage and they are only good for a few jumps.",
-        		"sadly this will be my last notes for this project. "
-        		+ "the project have been shut down because of Bobs accident and i won't be able to continue on my own. "
+        meta.setAuthor(/*ChatColor.DARK_AQUA*/  "Scientist " + ChatColor.AQUA + "Benjamin");
+        List<String> lore = new ArrayList<String>();
+		  lore.add(ChatColor.GREEN + "This is a ragged book");
+		  lore.add(ChatColor.GREEN + "It looks like it has been in a box for 50 years");
+        meta.setLore(lore);
+        meta.setPages("My studies show that there are a lot of potential energi in" + ChatColor.DARK_BLUE + " Magma_Cream. " + ChatColor.BLACK
+        		+ "That could be used in some items",
+        		"Further research have shown that it is possible to realease the potential energi in" + ChatColor.DARK_BLUE + " Magma_Cream" + ChatColor.BLACK + " in a small bursts. "
+        		+ "I can't wait to start playing around with it",
+        		"This is a great day, my team and i just created a pair of boots that uses" + ChatColor.DARK_BLUE + " Magma_Cream " + ChatColor.BLACK + "and in theory they should be able to launch a person a few feet into the air",
+        		"Success! The boots worked."
+        		+ "Kinda.."
+        		+ "Bob did take some dammage and they are only good for a few jumps.",
+        		"Sadly this will be my last notes for this project. "
+        		+ "The project have been shut down, because of Bob's accident, and i won't be able to continue on my own. "
         		+ "I have left some instructions on how the boots are made on the next page",
-        		"by combining magma_cream and a iron_igot you create a sole that can be placed under a pair of shoes using the Research Table");
+        		"By combining " + ChatColor.DARK_BLUE + "Magma_Cream" + ChatColor.BLACK + " and an " + ChatColor.DARK_BLUE + "Iron_Ingot" + ChatColor.BLACK + " in the Research Table you create a sole that can be placed under a pair of shoes");
         note.setItemMeta(meta);
         PlayerInventory inventory = p.getInventory(); 
         inventory.addItem(note);
     }
+
+		
 }
