@@ -1,4 +1,5 @@
 # Science
+Note: this is a on/off project that i only return to now and then
 A plugin that adds science to minecraft
 
 features:
